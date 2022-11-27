@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Novos elementos HTML5 - geolocation 2</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<p>Clique no botão para ver suas coordenadas.</p>
+
+<button onclick="getLocation()">Experimente</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition,
+		showError);
+    } else { 
+        x.innerHTML = "Geolocation não suportado para este navegador";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "Usuário negou o pedido de Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "As informações de localização não está disponível."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "O pedido para obter a localização do usuário expirou."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "Ocorreu um erro desconhecido."
+            break;
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Arcos olímpicos</title>
+</head>
+<body>
+<canvas id="meu_canvas" width="350" height="350"></canvas>
+<script>
+// Canvas e contexto
+var canvas = document.getElementById('meu_canvas');
+var context = canvas.getContext('2d');
+
+//Iniciar o caminho(apaga desenhos anteriores)
+ context.beginPath();
+ context.lineWidth= 5;
+ context.arc(100,60,55,0,2*Math.PI,true);
+ context.strokeStyle='blue';
+ context.stroke();
+ 
+  context.beginPath();
+  context.lineWidth= 5;
+  context.arc(190,60,55,0,2*Math.PI,true);
+  context.strokeStyle='black';
+  context.stroke();
+  
+  context.beginPath();
+  context.lineWidth= 5;
+  context.arc(280,60,55,0,2*Math.PI,true);
+  context.strokeStyle='red';
+  context.stroke();
+ 
+  context.beginPath();
+  context.lineWidth= 5;
+  context.arc(260,120,55,0,2*Math.PI,true);
+  context.strokeStyle='yellow';
+  context.stroke(); 
+ 
+  context.beginPath();
+  context.lineWidth= 5;
+  context.arc(130,120,55,0,2*Math.PI,true);
+  context.strokeStyle='green';
+  context.stroke();
+</script>
+</body>
+<html>

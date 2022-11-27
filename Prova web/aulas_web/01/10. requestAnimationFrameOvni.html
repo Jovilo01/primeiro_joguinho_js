@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Método window.requestAnimationFrame</title>
+</head>
+<body>
+	<canvas id="meu_canvas" width="500" height="600"></canvas>
+	<script>
+		//Canvas e contexto
+		canvas = document.getElementById('meu_canvas')
+		context = canvas.getContext('2d')
+
+		//Dados da posição e tamanho da imagem
+		var x = 20;
+		var y = 10;
+		var e = 32;
+		var d = 64;	
+		var imagem = new Image();
+		imagem.src = 'img/ovni.png';
+						
+		imagem.onload = function() {
+			requestAnimationFrame(mexerBola);
+		}
+		//Momento Inicial
+		var anterior = new Date().getTime();
+
+		//Iniciar a animação
+		requestAnimationFrame(mexerBola);
+
+		//Função de animação
+		function mexerBola(){
+			//Momento Atual
+			var agora = new Date().getTime();
+
+			//Diferença
+			var decorrido = agora - anterior;
+
+			//Limpar o Canvas
+			context.clearRect(0, 0, canvas.width, canvas.height);
+
+			//Desenhar Bola
+			context.beginPath();
+
+			context.drawImage(imagem,x,y,d,e);
+			var velocidade = 20;
+			y += velocidade * decorrido / 1000;
+			anterior = agora;
+			requestAnimationFrame(mexerBola);
+		}
+	</script>
+</body>
+</html>

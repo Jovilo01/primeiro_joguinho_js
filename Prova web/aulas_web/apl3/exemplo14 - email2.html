@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <title>Novos elementos HTML5 - formulario email com validação</title>
+  <meta charset="UTF-8">  
+<script type="text/javascript">
+ function mostrarMensagem()
+ {    var valor = document.getElementById('email').value; 
+ alert(valor);}
+ </script> 
+</head>
+
+<body>
+<form>
+   E-mail: <input type="email" id="email" name="email" 
+   oninvalid="setCustomValidity
+   ('Informe um email válido neste campo.')" >
+   <input type="submit" value="confirmar"
+   onclick="mostrarMensagem()" />		
+</form> 
+</body>
+</html>

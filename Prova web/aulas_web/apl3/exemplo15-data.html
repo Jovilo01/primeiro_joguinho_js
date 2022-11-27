@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Novos elementos HTML5 - formulario com data</title>
+  <meta charset="UTF-8">
+  
+<script type="text/javascript">
+ function mostrarMensagem()
+ {    var valor = document.getElementById('date').value; 
+ alert(valor);}
+ </script>
+ 
+</head>
+
+<body>
+<form>
+  data de Nascimento: <input type="date" id="date" name="date">
+<!--> data de nascimento com hora:
+<input type="datetime" id="date1" name="date1">
+so funciona no navegador safari e opera  </!-->
+   <input type="submit" value="confirmar"
+   onclick="mostrarMensagem()" />		
+</form> 
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Novos elementos HTML5 - formulario com validação
+  utilizando expressão regular</title>
+  <meta charset="UTF-8">
+  
+<script type="text/javascript">
+ function mostrarMensagem()
+ {    var valor = document.getElementById('uf').value; 
+ alert(valor);}
+ </script>
+ 
+</head>
+
+<body>
+<form>
+  UF: <input type="text" id="uf" name="uf"
+  pattern="[A-Za-z]{2}"
+  title="a UF deve ser composta de duas letras" >
+   <input type="submit" value="confirmar"
+   onclick="mostrarMensagem()" />		
+</form> 
+</body>
+</html>

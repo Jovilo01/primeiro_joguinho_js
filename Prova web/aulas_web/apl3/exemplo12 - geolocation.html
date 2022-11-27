@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Novos elementos HTML5 - geolocation</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<p>Clique no botão para ver suas coordenadas.</p>
+
+<button onclick="getLocation()">Experimente</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation não suportado para este navegador.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+</body>
+</html>

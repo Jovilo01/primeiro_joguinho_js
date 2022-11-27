@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Bandeira do brasil</title>
+</head>
+
+<body>
+   <canvas id="myCanvas" width="250" height="150"
+   style="border:1px solid #d3d3d3;"/>
+
+<script>
+var c = document.getElementById("myCanvas");
+var context = c.getContext("2d");
+
+//Desenha a retângulo verde
+context.fillStyle="green";
+context.fillRect(0,0,250,150);
+
+//Desenha o losango amarelo
+context.fillStyle = "yellow";
+context.beginPath();
+context.moveTo(125,0);
+context.lineTo(250,75);
+context.lineTo(125,150);
+context.lineTo(0, 75);
+context.lineTo(125,0);
+context.fill();
+context.closePath(); 
+
+//Desenha o círculo azul
+context.beginPath();
+context.fillStyle="blue";
+context.arc(125,75,50,0,2*Math.PI);
+context.fill();
+context.closePath();
+
+//Desenha a faixa branca
+context.fillStyle="white";
+context.fillRect(75,65,100,15);
+
+//Desenha o texto
+context.beginPath();
+context.fillStyle="black";
+context.font="10px Arial";
+context.fillText("Ordem e Progresso",80,75);
+context.fill();
+context.closePath();
+</script>
+</body>
+</html>

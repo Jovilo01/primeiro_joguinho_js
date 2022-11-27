@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Novos elementos HTML5 - formulario email </title>
+  <meta charset="UTF-8">
+  
+<script type="text/javascript">
+ function mostrarMensagem()
+ {    var valor = document.getElementById('email').value; 
+ alert(valor);}
+ </script>
+ 
+</head>
+
+<body>
+<form  autocomplete="on">
+   E-mail: <input type="email" id="email" 
+   name="email" autocomplete="on">
+           <input type="button" value="Mostrar mensagem"
+		   onclick="mostrarMensagem()" /> 
+</form>        
+
+<p>Preencha e envie o formulário, em seguida,
+ recarregue a página para ver como funciona o autocomplete.</p>
+<p>Observe que autocomplete é "on" para a forma,
+ mas "off" para o campo do e-mail.</p>
+</body>
+</html>
